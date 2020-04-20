@@ -69,3 +69,8 @@ As a user, The audio element with id of beep must stop playing and be rewound to
 
 ## Features
 
+## Credits
+
+### Acknowledgements
+
+Peter Weinberg including the [Code Pen](https://codepen.io/freeCodeCamp/pen/XpKrrW)
