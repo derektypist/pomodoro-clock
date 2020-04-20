@@ -66,3 +66,6 @@ As a user, The audio element with id="beep" must be 1 second or longer.
 As a user, The audio element with id of beep must stop playing and be rewound to the beginning when the element with the id of reset is clicked.
 
 [Wireframes](wireframes/wireframe-pomodoro-clock.png) are supplied.
+
+## Features
+
