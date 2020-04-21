@@ -20,7 +20,7 @@
         color: white;
         text-align: center;
         font-size: 30px;
-        #container {
+        #my-container {
             display: flex;
             height: 100vh;
             justify-content: center;
@@ -75,7 +75,7 @@
 
    /* Media Query */
     @media screen and (max-width: 500px) {
-        #container {
+        #my-container {
             transform: scale(0.8);
             -webkit-transform: scale(0.8);
             -moz-transform: scale(0.8);
@@ -89,7 +89,7 @@
 </head>
 <body>
     <!-- Apply div tag-->
-    <div id="app"></div>
+    <div class="container-fluid" id="app"></div>
 
     <!-- Load Babel Script -->
     <script type="text/babel">
@@ -119,7 +119,9 @@
         }
     };
 
-
+    class Timer extends React.Component {
+        
+    }
 
 
     </script>
