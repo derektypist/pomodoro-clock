@@ -212,9 +212,15 @@
             }
         }
 
+        warning(_timer) {
+            let warn = _timer < 61 ? 
+            this.setState({alarmColor: {color: 'orangered'}}) : 
+            this.setState({alarmColor: {color: 'white'}});
+        }
 
 
-        
+
+
     }  
   }
 
