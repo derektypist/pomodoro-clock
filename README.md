@@ -7,6 +7,7 @@ https://codepen.io/freeCodeCamp/full/XpKrrW
 
 On first load, the break length is 5 minutes.  The session length is 25 minutes.  When the timer is less than 61 seconds, the
 alarm colour changes to orange red.  Break length from 0 minutes to 60 minutes.  Session length from 0 minutes to 60 minutes.
+Alarm colours are white and orange red.
 
 ### User Stories
 
