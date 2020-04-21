@@ -172,6 +172,20 @@
             }
         }
 
+        timerControl() {
+             let control = this.state.timerState == 'stopped' ? (
+                this.beginCountDown(),
+                this.setState({timerState: 'running'})
+                ) : (
+                this.setState({timerState: 'stopped'}),
+                this.state.intervalID && this.state.intervalID.cancel()
+            );
+        }
+
+
+
+
+
     }
 
 
