@@ -5,6 +5,9 @@ https://codepen.io/freeCodeCamp/full/XpKrrW
 
 ## UX
 
+On first load, the break length is 5 minutes.  The session length is 25 minutes.  When the timer is less than 61 seconds, the
+alarm colour changes to orange red.  Break length from 0 minutes to 60 minutes.  Session length from 0 minutes to 60 minutes.
+
 ### User Stories
 
 Taken from https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-pomodoro-clock
@@ -68,6 +71,15 @@ As a user, The audio element with id of beep must stop playing and be rewound to
 [Wireframes](wireframes/wireframe-pomodoro-clock.png) are supplied.
 
 ## Features
+
+Setting of break lengths and session lengths.  Change of alarm colour when the timer is less than 61 seconds.
+
+
+
+
+
+
+
 
 ## Credits
 
