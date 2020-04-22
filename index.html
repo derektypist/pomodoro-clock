@@ -123,14 +123,17 @@
         let intervalID = "";
         let alarmColor = {color: "white"};
     
+        // Function to Set Break Length
         function setBrkLength(e) {
             lengthControl(brkLength, e.value, this.brkLength, 'Session');
         }
 
+        // Function to Set Session Length
         function setSeshLength(e) {
             lengthControl(seshLength, e.value, this.seshLength, 'Break');
         }
    
+        // Function to Set Length Control
         function lengthControl(stateToChange, sign, currentLength, timerType) {
             if (this.timerState == 'running') return;
             if (this.timerType == timerType) {
@@ -141,12 +144,15 @@
             }
         } else {
             if (sign == "-" && currentLength != 1 ) {
-                    this.setState({[stateToChange]: currentLength - 1, timer: currentLength * 60 - 60});
+                    this.({[stateToChange]: currentLength - 1, timer: currentLength * 60 - 60});
                 } else if (sign == "+" && currentLength != 60) {
-                    this.setState({[stateToChange]: currentLength + 1, timer: currentLength * 60 + 60});
+                    this.({[stateToChange]: currentLength + 1, timer: currentLength * 60 + 60});
                 }
-            
+            }
         }
+
+        function timerControl() {
+            let control = this.timerState = "stopped" ? (beginCountdown(), this.({timerState: "running"})) 
         }
             
             this.lengthControl = this.lengthControl.bind(this);
@@ -164,22 +170,7 @@
 
         
 
-        lengthControl(stateToChange, sign, currentLength, timerType) {
-            if (this.state.timerState == 'running') return;
-            if (this.state.timerType == timerType) {
-                if (sign == "-" && currentLength != 1 ) {
-                    this.setState({[stateToChange]: currentLength - 1});
-            } else if (sign == "+" && currentLength != 60) {
-                this.setState({[stateToChange]: currentLength + 1});
-                } 
-            } else {
-                 if (sign == "-" && currentLength != 1 ) {
-                    this.setState({[stateToChange]: currentLength - 1, timer: currentLength * 60 - 60});
-                } else if (sign == "+" && currentLength != 60) {
-                    this.setState({[stateToChange]: currentLength + 1, timer: currentLength * 60 + 60});
-                }
-            }
-        }
+        
 
         timerControl() {
              let control = this.state.timerState == 'stopped' ? (
