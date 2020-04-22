@@ -1,104 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pomodoro Clock</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Pomodoro Clock</title>
 
-    <!-- Load Style Sheets -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Codystar&display=swap" rel="stylesheet"> 
-    <style>
-    /* Body */
+	<!-- Load Style Sheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Codystar&display=swap" rel="stylesheet">
+	<style>
+		/* Body */
 
-    body {
-        font-family: "Roboto", Arial, Verdana, sans-serif;
-        background: seagreen;
-        color: white;
-        text-align: center;
-        font-size: 30px;
-        #my-container {
-            display: flex;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            .main-title {
-                font-size: 50px;
-                margin-bottom: 20px;
-            }
-            .length-control {
-                width: 250px;
-            }
-            button {
-                background: none;
-                outline: none;
-                border: none;
-                color: white;
-                cursor: pointer;
-            }
-            .btn-level, .length-control {
-                display: inline-block;
-                btn-level:nth-child(3) {
-                    width: 40px;
-                }
-            }
-            .timer {
-                border: 7px solid lime;
-                margin: 20px auto 10px auto;
-                width: 270px;
-                height: 160px;
-                border-radius: 50px;
-                position: relative;
-                .timer-wrapper {
-                    position: absolute;
-                    width: 190px;
-                    height: 110px;
-                    left: 50%;
-                    top: 50%;
-                    margin-left: -95px;
-                    margin-top: -57px;                  
-                }
-                #time-left {
-                    font-family: "Codystar", cursive;
-                    font-size: 80px;
-                }
-                .timer-control button:active {
-                    color: yellow;
-                }
-            }
+		body {
+			font-family: "Roboto", Arial, Verdana, sans-serif;
+			background: seagreen;
+			color: white;
+			text-align: center;
+			font-size: 30px;
 
-        }
-    }
+			#my-container {
+				display: flex;
+				height: 100vh;
+				justify-content: center;
+				align-items: center;
 
-   /* Media Query */
-    @media screen and (max-width: 500px) {
-        #my-container {
-            transform: scale(0.8);
-            -webkit-transform: scale(0.8);
-            -moz-transform: scale(0.8);
-            -ms-transform: scale(0.8);
-            -o-transform: scale(0.8);
-        }
-    }
+				.main-title {
+					font-size: 50px;
+					margin-bottom: 20px;
+				}
 
-    </style>
-    <!-- Load Scripts-->
-     <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+				.length-control {
+					width: 250px;
+				}
+
+				button {
+					background: none;
+					outline: none;
+					border: none;
+					color: white;
+					cursor: pointer;
+				}
+
+				.btn-level,
+				.length-control {
+					display: inline-block;
+
+					btn-level:nth-child(3) {
+						width: 40px;
+					}
+				}
+
+				.timer {
+					border: 7px solid lime;
+					margin: 20px auto 10px auto;
+					width: 270px;
+					height: 160px;
+					border-radius: 50px;
+					position: relative;
+
+					.timer-wrapper {
+						position: absolute;
+						width: 190px;
+						height: 110px;
+						left: 50%;
+						top: 50%;
+						margin-left: -95px;
+						margin-top: -57px;
+					}
+
+					#time-left {
+						font-family: "Codystar", cursive;
+						font-size: 80px;
+					}
+
+					.timer-control button:active {
+						color: yellow;
+					}
+				}
+
+			}
+		}
+
+		/* Media Query */
+		@media screen and (max-width: 500px) {
+			#my-container {
+				transform: scale(0.8);
+				-webkit-transform: scale(0.8);
+				-moz-transform: scale(0.8);
+				-ms-transform: scale(0.8);
+				-o-transform: scale(0.8);
+			}
+		}
+	</style>
+	<!-- Load Scripts-->
+	<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 
 </head>
-<body>
-    <!-- Apply div taga-->
-    <div class="container-fluid" id="my-container"></div>
-    <div class="container-fluid" id="app"></div>
 
-    <!-- Load Babel Script -->
-    <script type="text/babel">
-    // Set Up Components
+<body>
+	<!-- Apply div taga-->
+	<div class="container-fluid" id="my-container"></div>
+	<div class="container-fluid" id="app"></div>
+
+	<!-- Load Babel Script -->
+	<script type="text/babel">
+		// Set Up Components
     class TimerLengthControl extends React.Component {
         render() {
             return (
@@ -139,8 +152,8 @@
 
             this.setBrkLength = this.setBrkLength.bind(this);
             this.setSeshLength = this.setSeshLength.bind(this);
-            this.lengthControl = this.LengthControl.bind(this);
-            this.timerControl = this.TimerControl.bind(this);
+            this.lengthControl = this.lengthControl.bind(this);
+            this.timerControl = this.timerControl.bind(this);
             this.beginCountdown = this.beginCountdown.bind(this);
             this.decrementTimer = this.decrementTimer.bind(this);
             this.phaseControl = this.phaseControl.bind(this);
@@ -193,7 +206,7 @@
             this.decrementTimer(); 
             this.phaseControl();
         }, 1000)
-        })
+        });
         }
 
         decrementTimer() {
@@ -318,5 +331,6 @@
   
 
         </script>
-    </body>
+</body>
+
 </html>
