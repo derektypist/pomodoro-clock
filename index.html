@@ -100,29 +100,39 @@
 </head>
 
 <body>
-	<h1 id="main-title">Pomodoro Clock</h1>
-	<section class="length-control">
-		<article id="break-label">
-			Break Length
-		</article>
-		<button class="btn-level" id="break-decrement" value="-" onClick="setBrkLength()"><i class="fa fa-arrow-down fa-2x"/></button>
-		<article class="btn-level" id="break-length">
-		</article>
-		<button class="btn-level" id="break-increment" value="+" onClick="setBrkLength()"><i class="fa fa-arrow-up fa-2x"/></button>
-	</section>
-
+	
 	<!-- Load Script -->
 
-	<script>
-		// Set Up Global Variables
-        let brkLength = 5;
-        let seshLength = 25;
-        let timerState = "stopped";
-        let timerType = "Session";
-        let timer = 1500;
-        let intervalID = "";
-        let alarmColor = {color: "white"};
-    
+	<script type="text/babel">
+
+        // Define Variable
+        let accurateInterval = require('accurate-interval');
+
+		// Set Up Components
+        class TimerLengthControl extends React.Component {
+  render() {
+    return (
+      <div className="length-control">
+        <div id={this.props.titleID}>
+          {this.props.title}
+        </div>
+        <button id={this.props.minID}
+          className="btn-level" value="-" 
+          onClick={this.props.onClick}>
+          <i className="fa fa-arrow-down fa-2x"/>
+        </button>
+        <div id={this.props.lengthID} className="btn-level">
+          {this.props.length}
+        </div>
+        <button id={this.props.addID}
+          className="btn-level" value="+" 
+          onClick={this.props.onClick}>
+          <i className="fa fa-arrow-up fa-2x"/>
+        </button>
+      </div>
+    )
+  }
+};
         // Function to Set Break Length
         function setBrkLength(e) {
             lengthControl(brkLength, e.value, this.brkLength, 'Session');
