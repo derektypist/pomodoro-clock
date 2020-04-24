@@ -88,4 +88,4 @@ This project uses HTML5, Google Fonts, CSS3, React, Bootstrap 4.4.1 with Font Aw
 
 ### Acknowledgements
 
-Peter Weinberg including the [Code Pen](https://codepen.io/freeCodeCamp/pen/XpKrrW)
+Peter Weinberg including the [Code Pen](https://codepen.io/freeCodeCamp/pen/XpKrrW) with the accurateInterval.
