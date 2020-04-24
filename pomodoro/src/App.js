@@ -109,15 +109,16 @@ class Timer extends React.Component {
             this.warning(timer);
             this.buzzer(timer);
             if (timer < 0) { 
-                this.state.timerType == 'Session' ? (
-                this.state.intervalID && this.state.intervalID.cancel(),
-                this.beginCountDown(),
-                this.switchTimer(this.state.brkLength * 60, 'Break')
-                ) : (
-                this.state.intervalID && this.state.intervalID.cancel(),
-                this.beginCountDown(),
-                this.switchTimer(this.state.seshLength * 60, 'Session')
-                );
+                
+            let phaseC = this.state.timerType == 'Session' ? (this.state.intervalID && this.state.intervalID.cancel(),
+        this.beginCountDown(),
+        this.switchTimer(this.state.brkLength * 60, 'Break')) : 
+      (
+        this.state.intervalID && this.state.intervalID.cancel(),
+        this.beginCountDown(),
+        this.switchTimer(this.state.seshLength * 60, 'Session')
+      );
+                
             }
         }
 
