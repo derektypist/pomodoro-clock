@@ -83,6 +83,7 @@ class Timer extends React.Component {
     }
   }
   timerControl() {
+      // eslint-disable-next-line
     let control = this.state.timerState === 'stopped' ? (
       this.beginCountDown(),
       this.setState({timerState: 'running'})
