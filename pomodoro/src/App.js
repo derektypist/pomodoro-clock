@@ -65,25 +65,25 @@ class Timer extends React.Component {
     this.state.seshLength, 'Break');
   }
   lengthControl(stateToChange, sign, currentLength, timerType) {
-    if (this.state.timerState == 'running') return;
-    if (this.state.timerType == timerType) {
-      if (sign == "-" && currentLength != 1 ) {
+    if (this.state.timerState === 'running') return;
+    if (this.state.timerType === timerType) {
+      if (sign === "-" && currentLength !== 1 ) {
         this.setState({[stateToChange]: currentLength - 1});
-      } else if (sign == "+" && currentLength != 60) {
+      } else if (sign === "+" && currentLength !== 60) {
         this.setState({[stateToChange]: currentLength + 1});
       } 
     } else {
-      if (sign == "-" && currentLength != 1 ) {
+      if (sign === "-" && currentLength !== 1 ) {
         this.setState({[stateToChange]: currentLength - 1,
         timer: currentLength * 60 - 60});
-      } else if (sign == "+" && currentLength != 60) {
+      } else if (sign === "+" && currentLength !== 60) {
         this.setState({[stateToChange]: currentLength + 1,
         timer: currentLength * 60 + 60});
       } 
     }
   }
   timerControl() {
-    let control = this.state.timerState == 'stopped' ? (
+    let control = this.state.timerState === 'stopped' ? (
       this.beginCountDown(),
       this.setState({timerState: 'running'})
     ) : (
@@ -109,8 +109,9 @@ class Timer extends React.Component {
             this.warning(timer);
             this.buzzer(timer);
             if (timer < 0) { 
-                
-            let phaseC = this.state.timerType == 'Session' ? (this.state.intervalID && this.state.intervalID.cancel(),
+            
+            // eslint-disable-next-line    
+            let phaseC = this.state.timerType === 'Session' ? (this.state.intervalID && this.state.intervalID.cancel(),
         this.beginCountDown(),
         this.switchTimer(this.state.brkLength * 60, 'Break')) : 
       (
@@ -123,6 +124,7 @@ class Timer extends React.Component {
         }
 
         warning(_timer) {
+            // eslint-disable-next-line
             let warn = _timer < 61 ? 
             this.setState({alarmColor: {color: 'orangered'}}) : 
             this.setState({alarmColor: {color: 'white'}});
