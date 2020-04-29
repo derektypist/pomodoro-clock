@@ -79,7 +79,9 @@ Setting of break lengths and session lengths.  Change of alarm colour when the t
 
 This project uses HTML5, Google Fonts, CSS3, React, Bootstrap 4.4.1 with Font Awesome 4.7.0.
 
+## Deployment
 
+Go to directory pomodoro and type npm run build.
 
 
 
