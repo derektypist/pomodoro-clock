@@ -79,11 +79,18 @@ Setting of break lengths and session lengths.  Change of alarm colour when the t
 
 This project uses HTML5, Google Fonts, CSS3, React, Bootstrap 4.4.1 with Font Awesome 4.7.0.
 
+## Testing
+
+Ensure all user stories have been met.
+
 ## Deployment
 
 Go to directory pomodoro and type npm run build.
+To install the npm library of GitHub pages, use the command npm install gh-pages.
 
+Add "deploy": "gh-pages -d build" in the scripts of package.json.
 
+Deploy on [GitHub Pages](https://derektypist.github.io/pomodoro-clock)
 
 
 ## Credits
