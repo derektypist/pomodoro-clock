@@ -81,7 +81,7 @@ This project uses HTML5, Google Fonts, CSS3, React, Bootstrap 4.4.1 with Font Aw
 
 ## Testing
 
-Ensure all user stories have been met.
+Ensure all user stories have been met.  If not, go back and edit the code.
 
 ## Deployment
 
