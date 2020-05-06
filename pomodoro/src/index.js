@@ -5,9 +5,8 @@ import Timer from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Timer />
-  </React.StrictMode>,
+  
+    <Timer />,
   document.getElementById('root')
 );
 
