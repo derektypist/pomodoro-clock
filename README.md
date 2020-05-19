@@ -73,11 +73,12 @@ As a user, The audio element with id of beep must stop playing and be rewound to
 
 ## Features
 
-Setting of break lengths and session lengths.  Change of alarm colour when the timer is less than 61 seconds.
+Setting of break lengths and session lengths. Change of alarm color when timer is less than 61 seconds.
 
 ## Technologies
 
 This project uses HTML5, Google Fonts, CSS3, React, Bootstrap 4.4.1 with Font Awesome 4.7.0.
+It uses the moment library (details at https://momentjs.com).
 
 ## Testing
 
