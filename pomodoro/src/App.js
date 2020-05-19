@@ -131,16 +131,7 @@ class Timer extends React.Component {
                     onClick={this.counter} 
                     length={this.state.seshLength}/>
 
-                    <div className="timer" style={this.state.alarmColor}>
-                        <div className="timer-wrapper">
-                            <div id='timer-label'>
-                                {mode === 'session' ? 'Session' : 'Break'}
-                            </div>
-                            <div id='time-left'>
-                                {moment(this.state.timer).format('mm:ss')}
-                            </div>
-                        </div>
-                    </div>
+                    
 
                      <div className="timer-control">
                         <button id="start_stop" onClick={this.timerControl}>
