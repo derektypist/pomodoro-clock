@@ -29,35 +29,27 @@ class TimerLengthControl extends React.Component {
 };
 
 class Timer extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      brkLength: 5,
-      seshLength: 25,
-      timerState: 'stopped',
-      timerType: 'Session',
-      timer: 1500,
-      intervalID: '',
-      alarmColor: {color: 'white'}
+        mode: 'session',
+        active: false,
+        brkLength: 5,
+        seshLength: 25,
+        timer: 1500     
     };
-
-    this.setBrkLength = this.setBrkLength.bind(this);
-    this.setSeshLength = this.setSeshLength.bind(this);    
-    this.lengthControl = this.lengthControl.bind(this);
-    this.timerControl = this.timerControl.bind(this);
-    this.beginCountdown = this.beginCountdown.bind(this);
-    this.decrementTimer = this.decrementTimer.bind(this);
-    this.phaseControl = this.phaseControl.bind(this);
-    this.warning = this.warning.bind(this);
-    this.buzzer = this.buzzer.bind(this);
-    this.switchTimer = this.switchTimer.bind(this);
-    this.clockify = this.clockify.bind(this);
-    this.reset = this.reset.bind(this);
+   
   }
     
-    setBrkLength(e) {
-    this.lengthControl('brkLength', e.currentTarget.value, 
-    this.state.brkLength, 'Session');
+    componentDidUpdate() {
+    if(this.state.timer === 0 && this.state.mode === 'session') {
+      this.setState({ timer: this.state.brkLength * 60, mode: 'break' })
+      this.audio.play()
+    }
+    if(this.state.timer === 0 && this.state.mode === 'break') {
+      this.setState({ time: this.state.seshLength * 60, mode: 'session' })
+      this.audio.play()  
+    } 
   }
   setSeshLength(e) {
     this.lengthControl('seshLength', e.currentTarget.value, 
