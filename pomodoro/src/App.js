@@ -47,9 +47,15 @@ class Timer extends React.Component {
       this.audio.play();
     }
     if(this.state.timer === 0 && this.state.mode === 'break') {
-      this.setState({ time: this.state.seshLength * 60, mode: 'session' });
+      this.setState({ timer: this.state.seshLength * 60, mode: 'session' });
       this.audio.play();
     } 
+
+    if (this.state.timer < 61) {
+        this.setState({alarmColor: {color: 'orangered'}});
+    } else {
+        this.setState({alarmColor: {color: 'white'}});
+    }
   }
 
   // Play or Pause and Start Timer
