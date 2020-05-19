@@ -1,5 +1,7 @@
 import React from 'react';
 
+let moment = require('moment');
+
 // Display Session or Break Mode and the Time
 const Clock = ({mode, timer}) => (
     <div className="timer" style={this.state.alarmColor}>
