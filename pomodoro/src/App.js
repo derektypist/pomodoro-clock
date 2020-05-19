@@ -1,5 +1,21 @@
 import React from 'react';
 
+// Display Session or Break Mode and the Time
+const Clock = ({mode, timer}) => (
+    <div className="timer" style={this.state.alarmColor}>
+                        <div className="timer-wrapper">
+                            <div id='timer-label'>
+                                {mode === 'session' ? 'Session' : 'Break'}
+                            </div>
+                            <div id='time-left'>
+                                {timer}
+                            </div>
+                        </div>
+                    </div>
+);
+
+
+
 // Set Up Components
 class TimerLengthControl extends React.Component {
     render() {
@@ -95,6 +111,9 @@ class Timer extends React.Component {
             return (
                 <div>
                     <div className="main-title">Pomodoro Clock</div>
+                    <Clock 
+                    mode={this.state.mode}
+                    timer={moment(this.state.timer).format('mm:ss')}/>
                     <TimerLengthControl titleID="break-label"
                     minID="break-decrement"
                     addID="break-increment"
