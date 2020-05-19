@@ -98,3 +98,5 @@ Deploy on [GitHub Pages](https://derektypist.github.io/pomodoro-clock)
 ### Acknowledgements
 
 Peter Weinberg including the [Code Pen](https://codepen.io/freeCodeCamp/pen/XpKrrW) with the accurateInterval.
+
+Also Max Morales including the [Code Pen](https://codepen.io/pholoxo/pen/yLBQpoe).  Accessed on 19 May 2020.
