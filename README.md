@@ -96,6 +96,10 @@ Deploy on [GitHub Pages](https://derektypist.github.io/pomodoro-clock)
 
 ## Credits
 
+### Media
+
+Icons taken from Font Awesome.
+
 ### Acknowledgements
 
 Peter Weinberg including the [Code Pen](https://codepen.io/freeCodeCamp/pen/XpKrrW) with the accurateInterval.
