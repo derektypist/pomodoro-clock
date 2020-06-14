@@ -98,7 +98,7 @@ Deploy on [GitHub Pages](https://derektypist.github.io/pomodoro-clock)
 
 ### Media
 
-Icons taken from Font Awesome.
+Icons taken from Font Awesome (v4.7.0).
 
 ### Acknowledgements
 
