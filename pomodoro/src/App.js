@@ -1,20 +1,22 @@
 import React from 'react';
 
-let moment = require('moment');
-
-// Display Session or Break Mode and the Time
-const Clock = ({mode, timer}) => (
-    <div className="timer" style={this.state.alarmColor}>
-                        <div className="timer-wrapper">
-                            <div id='timer-label'>
-                                {mode === 'session' ? 'Session' : 'Break'}
-                            </div>
-                            <div id='time-left'>
-                                {timer}
-                            </div>
-                        </div>
-                    </div>
-);
+const accurateInterval = function (fn, time) {
+  var cancel, nextAt, timeout, wrapper;
+  nextAt = new Date().getTime() + time;
+  timeout = null;
+  wrapper = function () {
+    nextAt += time;
+    timeout = setTimeout(wrapper, nextAt - new Date().getTime());
+    return fn();
+  };
+  cancel = function () {
+    return clearTimeout(timeout);
+  };
+  timeout = setTimeout(wrapper, nextAt - new Date().getTime());
+  return {
+    cancel: cancel
+  };
+};
 
 
 
